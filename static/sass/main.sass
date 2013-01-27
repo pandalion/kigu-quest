@@ -2,16 +2,18 @@ $bg-color: #cab38b
 $main-text-color: #795d50
 $sub-text-color: #8aa920
 $link-color: #36a4b5
+$duckegg: #84aac3
 
 body
     font-family: 'Lato', sans-serif
     text-align: center
-    background: $bg-color url(../img/tiling-bg.png)
     padding: 20px
 
 h1
     color: $main-text-color
-    font-style: italic
+    font-size: 30px
+    margin: 0 0 20px 0
+    padding: 0
 h2
     color: $sub-text-color
     font:
@@ -23,8 +25,36 @@ a
 .wrapper
     background-color: white
     box-shadow: 2px 3px 6px #a7987e
-    padding: 20px
+    padding: 0 20px 20px 20px
     width: 60%
     margin: 0 auto
     img
         max-width: 100%
+
+.intro
+    width: 653px
+    height: 447px - 200px
+    background: url(../img/kiguquest-bg.png)
+    padding: 200px 0 0 20px
+    margin-left: 10px
+    .char
+        width: 130px
+        height: 208px
+        padding: 10px 5px 10px 8px
+        display: inline-block
+        border: solid 5px white
+            radius: 50px
+        &:hover
+            border-color: lighten($duckegg, 20%)
+            cursor: pointer
+
+.char-title
+    background-color: $duckegg
+    color: white
+    display: inline-block
+    padding: 10px 40px
+    border-radius: 50px
+    font:
+        style: italic
+        size: 22px
+    

@@ -1,12 +1,13 @@
 body {
   font-family: "Lato", sans-serif;
   text-align: center;
-  background: #cab38b url(../img/tiling-bg.png);
   padding: 20px; }
 
 h1 {
   color: #795d50;
-  font-style: italic; }
+  font-size: 30px;
+  margin: 0 0 20px 0;
+  padding: 0; }
 
 h2 {
   color: #8aa920;
@@ -19,8 +20,34 @@ a {
 .wrapper {
   background-color: white;
   box-shadow: 2px 3px 6px #a7987e;
-  padding: 20px;
+  padding: 0 20px 20px 20px;
   width: 60%;
   margin: 0 auto; }
   .wrapper img {
     max-width: 100%; }
+
+.intro {
+  width: 653px;
+  height: 247px;
+  background: url(../img/kiguquest-bg.png);
+  padding: 200px 0 0 20px;
+  margin-left: 10px; }
+  .intro .char {
+    width: 130px;
+    height: 208px;
+    padding: 10px 5px 10px 8px;
+    display: inline-block;
+    border: solid 5px white;
+      border-radius: 50px; }
+    .intro .char:hover {
+      border-color: #c9d9e4;
+      cursor: pointer; }
+
+.char-title {
+  background-color: #84aac3;
+  color: white;
+  display: inline-block;
+  padding: 10px 40px;
+  border-radius: 50px;
+  font-style: italic;
+  font-size: 22px; }
