@@ -1,6 +1,7 @@
 body {
   font-family: "Lato", sans-serif;
   text-align: center;
+  background-color: #cab38b;
   padding: 20px; }
 
 h1 {
@@ -47,6 +48,7 @@ a {
   background-color: #84aac3;
   color: white;
   display: inline-block;
+  width: 400px;
   padding: 10px 40px;
   border-radius: 50px;
   font-style: italic;
