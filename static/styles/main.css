@@ -32,17 +32,36 @@ a {
   height: 247px;
   background: url(../img/kiguquest-bg.png);
   padding: 200px 0 0 20px;
-  margin-left: 10px; }
+  margin-left: 10px;
+  position: relative; }
   .intro .char {
+    -webkit-backface-visibility: hidden;
+    -webkit-perspective: 1000;
+    opacity: 1;
     width: 130px;
     height: 208px;
     padding: 10px 5px 10px 8px;
+    position: absolute;
+    top: 200px;
     display: inline-block;
     border: solid 5px white;
       border-radius: 50px; }
+    .intro .char.gal {
+      left: 190px; }
+    .intro .char.dude {
+      left: 350px; }
     .intro .char:hover {
       border-color: #c9d9e4;
       cursor: pointer; }
+    .intro .char.hide {
+      border-color: rgba(0, 0, 0, 0);
+      opacity: 0;
+      -webkit-transition: opacity 0.5s ease; }
+    .intro .char.central {
+      left: 260px;
+      border-color: rgba(0, 0, 0, 0);
+      -webkit-transition: left 0.8s ease;
+      z-index: 2; }
 
 .char-title {
   background-color: #84aac3;

@@ -38,16 +38,36 @@ a
     background: url(../img/kiguquest-bg.png)
     padding: 200px 0 0 20px
     margin-left: 10px
+    position: relative
     .char
+        -webkit-backface-visibility: hidden
+        -webkit-perspective: 1000
+        opacity: 1
         width: 130px
         height: 208px
         padding: 10px 5px 10px 8px
+        position: absolute
+        top: 200px
         display: inline-block
         border: solid 5px white
             radius: 50px
+        &.gal
+            left: 190px
+        &.dude
+            left: 350px
         &:hover
             border-color: lighten($duckegg, 20%)
             cursor: pointer
+        &.hide
+            border-color: rgba(0,0,0,0)
+            opacity: 0
+            -webkit-transition: opacity 0.5s ease
+        &.central
+            left: 260px
+            border-color: rgba(0,0,0,0)
+            -webkit-transition: left 0.8s ease
+            z-index: 2
+
 
 .char-title
     background-color: $duckegg
