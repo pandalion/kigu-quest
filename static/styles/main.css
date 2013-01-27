@@ -1,0 +1,26 @@
+body {
+  font-family: "Lato", sans-serif;
+  text-align: center;
+  background: #cab38b url(../img/tiling-bg.png);
+  padding: 20px; }
+
+h1 {
+  color: #795d50;
+  font-style: italic; }
+
+h2 {
+  color: #8aa920;
+  font-size: 18px;
+  font-weight: normal; }
+
+a {
+  color: #36a4b5; }
+
+.wrapper {
+  background-color: white;
+  box-shadow: 2px 3px 6px #a7987e;
+  padding: 20px;
+  width: 60%;
+  margin: 0 auto; }
+  .wrapper img {
+    max-width: 100%; }
