@@ -34,6 +34,7 @@ $(function() {
         characterGender = localStorage.getItem('characterGender');
         console.log('is now ' + characterGender);
 
+    //Something random
 
     });
 
