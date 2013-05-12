@@ -1,8 +1,6 @@
-$bg-color: #cab38b
-$main-text-color: #795d50
-$sub-text-color: #8aa920
-$link-color: #36a4b5
-$duckegg: #84aac3
+@import compass/reset
+
+@import colors
 
 body
     font-family: 'Lato', sans-serif
@@ -12,8 +10,10 @@ body
 
 h1
     color: $main-text-color
-    font-size: 30px
-    margin: 0 0 20px 0
+    font:
+        size: 30px
+        weight: 700
+    margin: 20px 0
     padding: 0
     span
         color: $duckegg

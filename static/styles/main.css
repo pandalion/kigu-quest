@@ -1,93 +1,204 @@
+/* line 17, ../../../../../../Library/Ruby/Gems/1.8/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font: inherit;
+  font-size: 100%;
+  vertical-align: baseline;
+}
+
+/* line 22, ../../../../../../Library/Ruby/Gems/1.8/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+html {
+  line-height: 1;
+}
+
+/* line 24, ../../../../../../Library/Ruby/Gems/1.8/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+ol, ul {
+  list-style: none;
+}
+
+/* line 26, ../../../../../../Library/Ruby/Gems/1.8/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+/* line 28, ../../../../../../Library/Ruby/Gems/1.8/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+caption, th, td {
+  text-align: left;
+  font-weight: normal;
+  vertical-align: middle;
+}
+
+/* line 30, ../../../../../../Library/Ruby/Gems/1.8/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+q, blockquote {
+  quotes: none;
+}
+/* line 103, ../../../../../../Library/Ruby/Gems/1.8/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+q:before, q:after, blockquote:before, blockquote:after {
+  content: "";
+  content: none;
+}
+
+/* line 32, ../../../../../../Library/Ruby/Gems/1.8/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+a img {
+  border: none;
+}
+
+/* line 116, ../../../../../../Library/Ruby/Gems/1.8/gems/compass-0.12.2/frameworks/compass/stylesheets/compass/reset/_utilities.scss */
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section, summary {
+  display: block;
+}
+
+/* line 5, ../sass/main.sass */
 body {
   font-family: "Lato", sans-serif;
   text-align: center;
   background-color: #cab38b;
-  padding: 20px; }
+  padding: 20px;
+}
 
+/* line 11, ../sass/main.sass */
 h1 {
   color: #795d50;
   font-size: 30px;
-  margin: 0 0 20px 0;
-  padding: 0; }
-  h1 span {
-    color: #84aac3;
-    font-style: italic; }
+  font-weight: 700;
+  margin: 20px 0;
+  padding: 0;
+}
+/* line 18, ../sass/main.sass */
+h1 span {
+  color: #84aac3;
+  font-style: italic;
+}
 
+/* line 21, ../sass/main.sass */
 h2 {
   color: #8aa920;
   font-size: 18px;
-  font-weight: normal; }
+  font-weight: normal;
+}
 
+/* line 26, ../sass/main.sass */
 a {
-  color: #36a4b5; }
+  color: #36a4b5;
+}
 
+/* line 29, ../sass/main.sass */
 .wrapper {
   background-color: white;
   box-shadow: 2px 3px 6px #a7987e;
   padding: 0 20px 20px 20px;
   width: 60%;
-  margin: 0 auto; }
-  .wrapper img {
-    max-width: 100%; }
+  margin: 0 auto;
+}
+/* line 35, ../sass/main.sass */
+.wrapper img {
+  max-width: 100%;
+}
 
+/* line 38, ../sass/main.sass */
 .intro {
   width: 653px;
   height: 247px;
   background: url(../img/kiguquest-bg.png);
   padding: 200px 0 0 20px;
   margin-left: 10px;
-  position: relative; }
-  .intro .char {
-    -webkit-backface-visibility: hidden;
-    -webkit-perspective: 1000;
-    opacity: 1;
-    width: 130px;
-    height: 208px;
-    padding: 10px 5px 10px 8px;
-    position: absolute;
-    top: 200px;
-    display: inline-block;
-    border: solid 5px white;
-      border-radius: 50px; }
-    .intro .char.gal {
-      left: 190px; }
-    .intro .char.dude {
-      left: 350px; }
-    .intro .char:hover {
-      border-color: #c9d9e4;
-      cursor: pointer; }
-    .intro .char.hide {
-      border-color: rgba(0, 0, 0, 0);
-      opacity: 0;
-      -webkit-transition: opacity 0.5s ease; }
-    .intro .char.central {
-      left: 260px;
-      border-color: rgba(0, 0, 0, 0);
-      -webkit-transition: left 0.8s ease;
-      z-index: 2; }
-    .intro .char span {
-      position: absolute;
-      top: 9px;
-      left: 9px;
-      width: 130px;
-      height: 103px;
-      background: no-repeat; }
-    .intro .char.dude span {
-      top: 8px;
-      left: 16px; }
-    .intro .char.dude .light {
-      background-image: url(../img/sprite-files/hair-m-light.png); }
-    .intro .char.dude .med {
-      background-image: url(../img/sprite-files/hair-m-med.png); }
-    .intro .char.dude .dark {
-      background-image: url(../img/sprite-files/hair-m-dark.png); }
-    .intro .char.gal .light {
-      background-image: url(../img/sprite-files/hair-f-light.png); }
-    .intro .char.gal .med {
-      background-image: url(../img/sprite-files/hair-f-med.png); }
-    .intro .char.gal .dark {
-      background-image: url(../img/sprite-files/hair-f-dark.png); }
+  position: relative;
+}
+/* line 45, ../sass/main.sass */
+.intro .char {
+  -webkit-backface-visibility: hidden;
+  -webkit-perspective: 1000;
+  opacity: 1;
+  width: 130px;
+  height: 208px;
+  padding: 10px 5px 10px 8px;
+  position: absolute;
+  top: 200px;
+  display: inline-block;
+  border: solid 5px white;
+  border-radius: 50px;
+}
+/* line 57, ../sass/main.sass */
+.intro .char.gal {
+  left: 190px;
+}
+/* line 59, ../sass/main.sass */
+.intro .char.dude {
+  left: 350px;
+}
+/* line 61, ../sass/main.sass */
+.intro .char:hover {
+  border-color: #c9d9e4;
+  cursor: pointer;
+}
+/* line 64, ../sass/main.sass */
+.intro .char.hide {
+  border-color: rgba(0, 0, 0, 0);
+  opacity: 0;
+  -webkit-transition: opacity 0.5s ease;
+}
+/* line 68, ../sass/main.sass */
+.intro .char.central {
+  left: 260px;
+  border-color: rgba(0, 0, 0, 0);
+  -webkit-transition: left 0.8s ease;
+  z-index: 2;
+}
+/* line 73, ../sass/main.sass */
+.intro .char span {
+  position: absolute;
+  top: 9px;
+  left: 9px;
+  width: 130px;
+  height: 103px;
+  background: no-repeat;
+}
+/* line 81, ../sass/main.sass */
+.intro .char.dude span {
+  top: 8px;
+  left: 16px;
+}
+/* line 84, ../sass/main.sass */
+.intro .char.dude .light {
+  background-image: url(../img/sprite-files/hair-m-light.png);
+}
+/* line 86, ../sass/main.sass */
+.intro .char.dude .med {
+  background-image: url(../img/sprite-files/hair-m-med.png);
+}
+/* line 88, ../sass/main.sass */
+.intro .char.dude .dark {
+  background-image: url(../img/sprite-files/hair-m-dark.png);
+}
+/* line 91, ../sass/main.sass */
+.intro .char.gal .light {
+  background-image: url(../img/sprite-files/hair-f-light.png);
+}
+/* line 93, ../sass/main.sass */
+.intro .char.gal .med {
+  background-image: url(../img/sprite-files/hair-f-med.png);
+}
+/* line 95, ../sass/main.sass */
+.intro .char.gal .dark {
+  background-image: url(../img/sprite-files/hair-f-dark.png);
+}
 
+/* line 97, ../sass/main.sass */
 .char-title {
   background-color: #84aac3;
   color: white;
@@ -96,47 +207,69 @@ a {
   padding: 10px 40px;
   border-radius: 50px;
   font-style: italic;
-  font-size: 22px; }
+  font-size: 22px;
+}
 
+/* line 108, ../sass/main.sass */
 ul.hairstyles {
   display: none;
   list-style-type: none;
   margin: 0 0 10px 0;
-  padding: 0; }
-  ul.hairstyles li {
-    display: inline-block;
-    padding: 10px 0;
-    background: no-repeat;
-      background-position: center;
-      background-size: 80px;
-    width: 100px;
-    height: 60px;
-    border: solid 5px white;
-      border-radius: 25px; }
-    ul.hairstyles li:hover {
-      border-color: #c9d9e4;
-      cursor: pointer; }
-  ul.hairstyles.dude-hair .light {
-    background-image: url(../img/sprite-files/hair-m-light.png); }
-  ul.hairstyles.dude-hair .med {
-    background-image: url(../img/sprite-files/hair-m-med.png); }
-  ul.hairstyles.dude-hair .dark {
-    background-image: url(../img/sprite-files/hair-m-dark.png); }
-  ul.hairstyles.gal-hair .light {
-    background-image: url(../img/sprite-files/hair-f-light.png); }
-  ul.hairstyles.gal-hair .med {
-    background-image: url(../img/sprite-files/hair-f-med.png); }
-  ul.hairstyles.gal-hair .dark {
-    background-image: url(../img/sprite-files/hair-f-dark.png); }
+  padding: 0;
+}
+/* line 113, ../sass/main.sass */
+ul.hairstyles li {
+  display: inline-block;
+  padding: 10px 0;
+  background: no-repeat;
+  background-position: center;
+  background-size: 80px;
+  width: 100px;
+  height: 60px;
+  border: solid 5px white;
+  border-radius: 25px;
+}
+/* line 123, ../sass/main.sass */
+ul.hairstyles li:hover {
+  border-color: #c9d9e4;
+  cursor: pointer;
+}
+/* line 127, ../sass/main.sass */
+ul.hairstyles.dude-hair .light {
+  background-image: url(../img/sprite-files/hair-m-light.png);
+}
+/* line 129, ../sass/main.sass */
+ul.hairstyles.dude-hair .med {
+  background-image: url(../img/sprite-files/hair-m-med.png);
+}
+/* line 131, ../sass/main.sass */
+ul.hairstyles.dude-hair .dark {
+  background-image: url(../img/sprite-files/hair-m-dark.png);
+}
+/* line 134, ../sass/main.sass */
+ul.hairstyles.gal-hair .light {
+  background-image: url(../img/sprite-files/hair-f-light.png);
+}
+/* line 136, ../sass/main.sass */
+ul.hairstyles.gal-hair .med {
+  background-image: url(../img/sprite-files/hair-f-med.png);
+}
+/* line 138, ../sass/main.sass */
+ul.hairstyles.gal-hair .dark {
+  background-image: url(../img/sprite-files/hair-f-dark.png);
+}
 
+/* line 140, ../sass/main.sass */
 .character-name {
   display: none;
   font-size: 22px;
   padding: 5px 20px;
   border-radius: 25px;
   outline: none;
-  margin-bottom: 30px; }
+  margin-bottom: 30px;
+}
 
+/* line 148, ../sass/main.sass */
 .button {
   display: inline-block;
   margin-left: 10px;
@@ -145,4 +278,5 @@ ul.hairstyles {
   border-radius: 25px;
   width: 100px;
   padding: 10px 0;
-  cursor: pointer; }
+  cursor: pointer;
+}
