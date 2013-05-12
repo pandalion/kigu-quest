@@ -1,114 +1,109 @@
-// Get current properties of a character from local storage
-var characterGender = localStorage.getItem('characterGender');
-var characterHair = localStorage.getItem('characterHair');
-//if hair isn't picked yet, use default
-if (characterHair == null) {
-    characterHair = 'med';
+var kiguQuest = {};
+
+//See if a character exists already and if not use character defaults
+if (localStorage.getItem('kiguQuest.character')) {
+    kiguQuest.character = JSON.parse(localStorage.getItem('kiguQuest.character'));
+} else {
+    kiguQuest.character = {
+        hair: 'light',
+        gender: 'dude',
+        name: 'nameless',
+        level: 1
+    }
 }
-var characterName = localStorage.getItem('characterName');
+console.log(kiguQuest.character);
 
-console.log('Character gender is '+characterGender);
-console.log('Character hair is '+characterHair);
-console.log('Character name is '+characterName);
-
-
-//Later - see if I can store these all as one object in localstorage
-//Needs to be stringified and then parsed to do this
-var myCharacter = {
-    "name": '',
-    "gender": '',
-    "level": 1
-}
-
-console.log(myCharacter);
-localStorage.setItem('myCharacter', JSON.stringify(myCharacter));
-
-var retrievedObject = localStorage.getItem('myCharacter');
-console.log(JSON.parse(retrievedObject));
-
-////////////////////////////////////////////////////////////////////
+//Load current character properties
+$('.char span').addClass(kiguQuest.character.hair);
 
 
-$(function() {
-    //Load current character properties
-    $('.char span').addClass(characterHair);
+//Set up initial steps of character creation
+//maybe a better way to do this later
+kiguQuest.currentStep = 1;
+var stepHeading = $('.step-name');
+var charImage = $('.char');
+var charTitle = $('.char-title')
+var charHair = $('.hairstyles')
 
-    //Set up initial steps of character creation
-    //maybe a better way to do this later
-    var stepHeading = $('.step-name');
-    var step1 = 'Choose your adventurer!';
-    var step2 = '<span>Fantastic choice!</span><br> How about some fancy hair?';
-    var step3 = '<span>Very sophisticated!</span><br>Who are you anyway?';
-    var step4 = 'Yay! Your character is ready!';
+//STEP ONE - Choose character
+if (kiguQuest.currentStep = 1) {
 
-    $(stepHeading).html(step1);
+    $(stepHeading).html('Choose your adventurer!');
 
     //Display character descriptions
-    $('.char').on('mouseover', function() {
-        var galDesc = "Totally Awesome Gal";
-        var dudeDesc = "Super Amazing Dude";
-
+    $(charImage).on('mouseover', function() {
         if ($(this).hasClass('gal')) {
-            $('.char-title').html(galDesc);
+            $(charTitle).html("Totally Awesome Gal");
         } else {
-            $('.char-title').html(dudeDesc);
+            $(charTitle).html("Super Amazing Dude");
         }
     });
-    $('.char').on('mouseout', function() {
-        var nochoiceDesc = "Choices are tough, but they gotta be made...";
-        $('.char-title').html(nochoiceDesc);
+
+    $(charImage).on('mouseout', function() {
+        $(charTitle).html("Choices are tough, but they gotta be made...");
     });
 
-    //STEP ONE - Pick a character
-    $('.char').on('click', function() {
+    //Click a character
+    $(charImage).on('click', function() {
         if ($(this).hasClass('gal')) {
-            localStorage.setItem('characterGender','gal');
-            $('.hairstyles').addClass('gal-hair');
+            kiguQuest.character.gender = 'gal';
+            $(charHair).addClass('gal-hair');
             $('.dude').addClass('hide');
             $(this).addClass('central');
         } else {
-            localStorage.setItem('characterGender','dude');
-            $('.hairstyles').addClass('dude-hair');
+            kiguQuest.character.gender = 'dude';
+            $(charHair).addClass('dude-hair');
             $('.gal').addClass('hide');
             $(this).addClass('central');
         }
-        characterGender = localStorage.getItem('characterGender');
-        console.log('Gender is now ' + characterGender);
+        console.log('Gender is now ' + kiguQuest.character.gender);
+        localStorage.setItem('kiguQuest.character', JSON.stringify(kiguQuest.character));
+        $(charTitle).hide();
+        $(charHair).show();
+        kiguQuest.currentStep = 2;
+    })
+}
 
-        //STEP TWO - Pick a hair colour
-        $('.char-title').hide();
-        $('.hairstyles').show();
-        $(stepHeading).html(step2);
+//STEP TWO - Choose hair
+if (kiguQuest.currentStep = 2) {
+    var currentHair = $('.hairstyles li');
 
-        $('.hairstyles li').on('mouseover', function() {
-            var hoveredColour = $(this).attr('class');
-            //show example of hair
-            $('.char span').removeClass().addClass(hoveredColour);
-        })
+    $(stepHeading).html('<span>Fantastic choice!</span><br> How about some fancy hair?');
 
-        $('.hairstyles li').on('click', function() {
-            var hoveredColour = $(this).attr('class');
-            localStorage.setItem('characterHair', hoveredColour);
-
-            characterHair = localStorage.getItem('characterHair');
-            console.log('Hair is now ' + characterHair);
-
-            $('.hairstyles').hide();
-            $('.character-name, .button').show();
-            $(stepHeading).html(step3);
-
-            //Pick a name
-            $('.button').on('click', function() {
-                var chosenName = $('.character-name').val();
-                localStorage.setItem('characterName', chosenName);
-
-                characterName = localStorage.getItem('characterName');
-                console.log('Name is now ' + characterName);
-
-                $('.character-name, .button').hide();
-                $(stepHeading).html(step4);
-            })
-        })
+    $(currentHair).on('mouseover', function() {
+        var hoveredColour = $(this).attr('class');
+        //show example of hair
+        $('.char span').removeClass().addClass(hoveredColour);
     });
 
-});
+    $(currentHair).on('click', function() {
+        var hoveredColour = $(this).attr('class');
+        kiguQuest.character.hair = hoveredColour;
+        localStorage.setItem('kiguQuest.character', JSON.stringify(kiguQuest.character));
+        console.log('Hair is now ' + kiguQuest.character.hair);
+
+        $(charHair).hide();
+        $('.character-name, .button').show();
+        kiguQuest.currentStep = 3;
+    });
+}
+
+//STEP THREE - Choose name
+if (kiguQuest.currentStep = 3) {
+    $(stepHeading).html('<span>Very sophisticated!</span><br>Who are you anyway?');
+        //Pick a name
+        $('.button').on('click', function() {
+            var chosenName = $('.character-name').val();
+
+            $('.character-name, .button').hide();
+            kiguQuest.character.name = chosenName;
+            localStorage.setItem('kiguQuest.character', JSON.stringify(kiguQuest.character));
+            console.log('Name is now ' + kiguQuest.character.name);
+            kiguQuest.currentStep = 4;
+        });
+}
+
+//STEP FOUR - Complete
+if (kiguQuest.currentStep = 4) {
+    $(stepHeading).html('Yay! Your character is ready!');
+}
